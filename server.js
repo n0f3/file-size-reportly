@@ -14,20 +14,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-function getFileSize(req, res) {
-  res.location('/getfilesize');
-  res.send({ size: req.dataProcessed });
-}
-
-function processUpload(req, res, next) {
-  req.dataProcessed = req.file.size;
-  return next();
-}
-
-app.post('/processupload', uploadFile.single('fileUpload'), processUpload, getFileSize);
-
-app.get('/getfilesize', getFileSize);
-
-
+app.post('/processupload', uploadFile.single('fileUpload'), (req, res) => {
+  return res.send({ fileSize: req.file.size });
+});
 
 app.listen(app.get('port'), () => console.log(`Listening on port ${app.get('port')}`));
