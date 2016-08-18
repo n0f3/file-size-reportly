@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    title
+      File Size Reportly
+  body
+    h4 Submit a file that you wish to view the size of:
+    form#sendFileForm(method="post", enctype="multipart/form-data", action="/processupload")
+      d
+        input(type="file" name="fileUpload")
+        input(type="submit")
+        
