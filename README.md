@@ -15,10 +15,9 @@ After this you can run ```npm start``` to run the dev server locally which will 
 ```
 .
 ├── package.json
-├── public
-│   └── html
-│       └── index.html
 ├── README.md
+├── routes
+│   └── processUpload.js
 ├── server.js
 └── views
     └── index.pug
