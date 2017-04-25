@@ -4,6 +4,11 @@ html(lang="en")
     title
       File Size Reportly
   body
+    h1 File metadata microservice
+    p.
+      This microservice API lets you submit a file from your computer and it will analyze it to determine its size and then return that information in json format. After being uploaded, the file is automatically deleted from the server and won't be stored, as it's only initially needed to provide its size.
+      <br/><br/>
+      To get started, simply follow the instructions down below.
     h4 Submit a file that you wish to view the size of:
     form#sendFileForm(method="post", enctype="multipart/form-data", action="/processupload")
       d
